@@ -19,5 +19,6 @@
 </style>
 <script>
 const abc = 3;
+const ddd = 3;
 export default {};
 </script>
