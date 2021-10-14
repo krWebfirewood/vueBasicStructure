@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <router-view />
+    <ul>
+      <li>222</li>
+      <li>124</li>
+    </ul>
   </div>
 </template>
 

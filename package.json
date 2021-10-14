@@ -8,16 +8,18 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-fix": "eslint src/**/* --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,json,html,vue}\""
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     },
     "lint-staged": {
-      "*.{js,vue,css,scss,html,md}": [
-        "eslint --fix",
-        "pretier --write"
+      "src/**/*.{js,vue}": [
+        "npm run format",
+        "npm run lint-fix"
       ]
     }
   },
