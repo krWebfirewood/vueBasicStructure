@@ -3,7 +3,7 @@
     <router-view />
     <ul>
       <li>222</li>
-      <li>124</li>
+      <li>124 123123</li>
     </ul>
   </div>
 </template>
@@ -18,6 +18,6 @@
   margin-top 60px
 </style>
 <script>
-const abc = 3;
 export default {};
 </script>
+git a
