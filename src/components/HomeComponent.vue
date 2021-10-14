@@ -1,9 +1,15 @@
 <template>
-  <div>
-    <div v-for="item in productList" :key="item.productId">
-      {{ item.productName }}
+  <div id="homeContentBlock">
+    <div class="homeContent">
+      <div
+        class="homeContentItem"
+        v-for="productItem in productList"
+        :key="productItem.productId"
+      >
+        <img :src="productItem.productImage1" />
+        <div>{{ productItem.productName }}</div>
+      </div>
     </div>
-    <button @click="getProduct({ limit: 20, offset: 0 })">클릭</button>
   </div>
 </template>
 
@@ -26,26 +32,23 @@ export default {
   },
 
   created() {
-    //this.getHomeData();
-    // this.$store.dispatch('product/FETCH_POPULAR_PRODUCT_LIST', {limit: 10, offset: 1});
+    this.getProduct({ limit: 30, offset: 0, categoryLarge: 1000000 });
   },
   methods: {
     ...productListHelper.mapActions({
       getProduct: 'FETCH_POPULAR_PRODUCT_LIST',
     }),
-    // async getHomeData() {
-    //   try {
-    //     const currentPage = {limit: 10, offset: 0}
-    //     await this.$store.dispatch('FETCH_POPULAR_PRODUCT_LIST', currentPage);
-    //     console.warn(this.productList)
-    //   } catch (e) {
-    //     console.log(e);
-    //   } finally {
-    //
-    //   }
-    // }
   },
 };
 </script>
 
-<style scoped></style>
+<style lang="stylus">
+#homeContentBlock
+  min-height 100%
+
+  .homeContent
+    border solid 1px
+
+    .homeContentItem
+      border solid 1px red
+</style>

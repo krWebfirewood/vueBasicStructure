@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="homeBlock">
     <HeaderComponent />
     <HomeComponent />
     <FooterComponent />
@@ -21,3 +21,10 @@ export default {
   },
 };
 </script>
+
+<style lang="stylus">
+#homeBlock
+  display flex
+  flex-direction column
+  min-height 80vh;
+</style>

@@ -14,9 +14,13 @@ const mutations = {
 
 // actions
 const actions = {
-  FETCH_POPULAR_PRODUCT_LIST({ commit }, payload) {
+  async FETCH_POPULAR_PRODUCT_LIST({ commit }, payload) {
     console.warn(payload);
-    getListPopularProducts(payload.limit, payload.offset)
+    getListPopularProducts(
+      (payload.limit ??= 30),
+      (payload.offset ??= 0),
+      payload.categoryLarge,
+    )
       .then((res) => {
         console.log('FETCH_POPULAR_PRODUCT_LIST', res);
         commit('SET_PRODUCT_LIST', res.data);
