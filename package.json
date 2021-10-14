@@ -12,8 +12,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm test"
+      "pre-commit": "lint-staged"
     },
     "lint-staged": {
       "*.{js,vue,css,scss,html,md}": [
@@ -39,13 +38,13 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-vue": "^6.2.2",
-    "husky": "^7.0.0",
-    "lint-staged": "^11.1.4",
-    "prettier": "^2.2.1",
+    "husky": "^4.3.8",
+    "lint-staged": "^11.2.3",
+    "prettier": "2.4.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.6.11"
