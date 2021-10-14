@@ -9,7 +9,8 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "lint-fix": "eslint src/**/* --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,json,html,vue}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,json,html,vue}\"",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -43,7 +44,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-vue": "^6.2.2",
-    "husky": "^4.3.8",
+    "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
     "prettier": "2.4.1",
     "stylus": "^0.54.7",
