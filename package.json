@@ -9,18 +9,6 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm test"
-    },
-    "lint-staged": {
-      "*.{js,vue,css,scss,html,md}": [
-        "eslint --fix",
-        "pretier --write"
-      ]
-    }
-  },
   "dependencies": {
     "axios": "^0.22.0",
     "core-js": "^3.6.5",
