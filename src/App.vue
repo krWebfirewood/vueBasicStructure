@@ -18,6 +18,5 @@
   margin-top 60px
 </style>
 <script>
-const abc = 3;
 export default {};
 </script>
