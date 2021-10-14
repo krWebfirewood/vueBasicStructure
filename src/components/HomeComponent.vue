@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(item, idx) in productList" :key="item.productId">
+    <div v-for="item in productList" :key="item.productId">
       {{ item.productName }}
     </div>
     <button @click="getProduct({ limit: 20, offset: 0 })">클릭</button>

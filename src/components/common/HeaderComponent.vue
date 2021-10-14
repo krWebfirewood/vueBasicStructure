@@ -12,8 +12,6 @@
 </template>
 
 <script>
-const abc = 0;
-
 export default {
   name: 'HeaderComponent',
 };
