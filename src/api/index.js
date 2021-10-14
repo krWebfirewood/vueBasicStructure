@@ -7,4 +7,5 @@ export function createInstance() {
 }
 
 const abca = 0;
+const b = 0;
 export const instance = createInstance();
