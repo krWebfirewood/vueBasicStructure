@@ -16,7 +16,7 @@
       "pre-push": "npm test"
     },
     "lint-staged": {
-      "*.{js,vue,css,scss,html,md}": [
+      "*.js": [
         "eslint --fix",
         "pretier --write"
       ]
