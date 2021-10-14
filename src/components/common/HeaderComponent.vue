@@ -11,6 +11,7 @@
 
 <script>
 const abc = 0;
+const b = 0;
 
 export default {
   name: 'HeaderComponent',
