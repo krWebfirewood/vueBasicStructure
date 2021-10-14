@@ -7,8 +7,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint",
-    "prepack": "husky install"
+    "lint": "vue-cli-service lint"
   },
   "husky": {
     "hooks": {
@@ -16,7 +15,7 @@
       "pre-push": "npm test"
     },
     "lint-staged": {
-      "*.js": [
+      "*.{js,vue,css,scss,html,md}": [
         "eslint --fix",
         "pretier --write"
       ]

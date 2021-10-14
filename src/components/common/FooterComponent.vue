@@ -1,7 +1,5 @@
 <template>
-  <div>
-    풋터
-  </div>
+  <div>풋터</div>
 </template>
 
 <script>
@@ -10,6 +8,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
