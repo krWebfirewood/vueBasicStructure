@@ -10,7 +10,7 @@ const routes = [
     component: () => import('../views/HomePage.vue'),
   },
   {
-    path: '/detail',
+    path: '/detail/:productId',
     name: 'productDetailPage',
     component: () => import('../views/ProductDetailPage.vue'),
   },

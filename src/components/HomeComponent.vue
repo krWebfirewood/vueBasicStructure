@@ -5,6 +5,7 @@
         class="homeContentItem"
         v-for="productItem in productList"
         :key="productItem.productId"
+        @click="movePage(productItem)"
       >
         <img :src="productItem.productImage1" />
         <div>{{ productItem.productName }}</div>
@@ -38,6 +39,10 @@ export default {
     ...productListHelper.mapActions({
       getProduct: 'FETCH_POPULAR_PRODUCT_LIST',
     }),
+    movePage: function (productItem) {
+      const productId = productItem.productId;
+      this.$router.push(`/detail/${productId}`);
+    },
   },
 };
 </script>

@@ -1,11 +1,11 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <DetailComponent />
 </template>
 
 <script>
+import DetailComponent from '../components/DetailComponent';
 export default {
   name: 'ProductDetailPage',
+  components: { DetailComponent },
 };
 </script>
