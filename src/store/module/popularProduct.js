@@ -1,33 +1,50 @@
 // state
 import { getListPopularProducts } from '@/api/product/read';
+import { AsyncMutationCreator } from '../../lib/mutstion-types';
+import asyncCommit from '../../lib/asyncCommit';
+
+const FIRSTNAME = {
+  FETCH_POPULAR_PRODUCT_LIST: AsyncMutationCreator(
+    'FETCH_POPULAR_PRODUCT_LIST',
+  ),
+};
+
+const moduleName = 'product';
 
 const state = {
   productList: [],
+  isLoading: true,
 };
 
 // mutations
 const mutations = {
-  SET_PRODUCT_LIST(state, productList) {
-    state.productList = productList;
+  [FIRSTNAME.FETCH_POPULAR_PRODUCT_LIST.PENDING](state, value) {
+    console.log('PENDING', state, value);
+  },
+  [FIRSTNAME.FETCH_POPULAR_PRODUCT_LIST.SUCCESS](state, value) {
+    console.log('SUCCESS');
+    state.isLoading = false;
+    state.productList = value;
+  },
+  [FIRSTNAME.FETCH_POPULAR_PRODUCT_LIST.FAILURE](state, value) {
+    state.isLoading = false;
+    console.log('FAILURE', state, value);
   },
 };
 
 // actions
 const actions = {
-  async FETCH_POPULAR_PRODUCT_LIST({ commit }, payload) {
-    console.warn(payload);
-    getListPopularProducts(
-      (payload.limit ??= 30),
-      (payload.offset ??= 0),
-      payload.categoryLarge,
-    )
-      .then((res) => {
-        console.log('FETCH_POPULAR_PRODUCT_LIST', res);
-        commit('SET_PRODUCT_LIST', res.data);
-      })
-      .catch((error) => {
-        console.log('error>>>', error);
-      });
+  async getProductList({ commit }, payload) {
+    console.log(commit);
+    await asyncCommit(
+      moduleName,
+      FIRSTNAME.FETCH_POPULAR_PRODUCT_LIST,
+      getListPopularProducts(
+        (payload.limit ??= 30),
+        (payload.offset ??= 0),
+        payload.categoryLarge,
+      ),
+    );
   },
 };
 

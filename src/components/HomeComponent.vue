@@ -1,5 +1,6 @@
 <template>
   <div id="homeContentBlock">
+    {{ isLoading ? this.$loading(true) : this.$loading(false) }}
     <div class="homeContent">
       <div
         class="homeContentItem"
@@ -30,14 +31,21 @@ export default {
     ...productListHelper.mapState({
       productList: (state) => state.productList,
     }),
+    ...productListHelper.mapState({
+      isLoading: (state) => state.isLoading,
+    }),
   },
 
   created() {
-    this.getProduct({ limit: 30, offset: 0, categoryLarge: 1000000 });
+    this.getProduct({
+      limit: 30,
+      offset: 0,
+      categoryLarge: 1000000,
+    });
   },
   methods: {
     ...productListHelper.mapActions({
-      getProduct: 'FETCH_POPULAR_PRODUCT_LIST',
+      getProduct: 'getProductList',
     }),
     movePage: function (productItem) {
       const productId = productItem.productId;

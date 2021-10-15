@@ -35,7 +35,7 @@ export default {
       getCategory: 'SET_CATEGORY_LIST',
     }),
     ...productListHelper.mapActions({
-      selectCategory: 'FETCH_POPULAR_PRODUCT_LIST',
+      selectCategory: 'getProductList',
     }),
   },
 };
