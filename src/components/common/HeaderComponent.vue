@@ -12,9 +12,10 @@
 </template>
 
 <script>
+//전역 데이터 관리 vuex
+//로컬 데이터는 할인꾹이랑 동일.
 import { createNamespacedHelpers } from 'vuex';
 const productListHelper = createNamespacedHelpers('product');
-
 const categoryListHelper = createNamespacedHelpers('category');
 
 export default {

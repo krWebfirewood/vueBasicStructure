@@ -19,6 +19,7 @@ const state = {
 // mutations
 const mutations = {
   [FIRSTNAME.FETCH_POPULAR_PRODUCT_LIST.PENDING](state, value) {
+    state.isLoading = true;
     console.log('PENDING', state, value);
   },
   [FIRSTNAME.FETCH_POPULAR_PRODUCT_LIST.SUCCESS](state, value) {
@@ -34,8 +35,7 @@ const mutations = {
 
 // actions
 const actions = {
-  async getProductList({ commit }, payload) {
-    console.log(commit);
+  async getProductList(context, payload) {
     await asyncCommit(
       moduleName,
       FIRSTNAME.FETCH_POPULAR_PRODUCT_LIST,

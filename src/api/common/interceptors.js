@@ -2,6 +2,7 @@ export function setInterceptors(axiosService) {
   axiosService.interceptors.request.use(
     function (config) {
       // 요청을 보내기 전에 어떤 처리를 할 수 있다.
+      // Header 토큰 포함할 때 여기서 처리
       console.log(1111);
       return config;
     },
@@ -14,6 +15,7 @@ export function setInterceptors(axiosService) {
   axiosService.interceptors.response.use(
     function (response) {
       // 서버에 요청을 보내고 나서 응답을 받기 전에 어떤 처리를 할 수 있다.
+      // Header 토큰 미포함할 때 여기서 처리
       console.log(2222);
       return response;
     },
